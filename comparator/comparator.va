@@ -1,0 +1,24 @@
+`include "constants.vams"
+`include "disciplines.vams"
+
+module comparator(outp, outn, vinp, vinn, clk, vdd);
+  output outp, outn;
+  input vinp, vinn, clk, vdd;
+
+  electrical outp, outn, vinp, vinn, clk, vdd;
+
+  analog begin
+    if (V(clk) > 0.5) begin
+      if (V(vinp) > V(vinn)) begin
+        V(outp) <+ V(vdd);
+        V(outn) <+ 0;
+      end else begin
+        V(outp) <+ 0;
+        V(outn) <+ V(vdd);
+      end
+    end else begin
+      V(outp) <+ 0;
+      V(outn) <+ 0;
+    end
+  end
+endmodule
