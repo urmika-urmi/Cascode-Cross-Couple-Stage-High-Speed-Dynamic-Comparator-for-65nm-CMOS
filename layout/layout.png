@@ -1,0 +1,9 @@
+## 🧩 Layout Details
+
+- The layout was implemented using 65nm CMOS design rules.
+- DRC and LVS passed successfully.
+- GDSII file: layout/layout.gds
+- Extracted netlist: layout/netlist_extracted.sp
+
+### 🖼 Layout Preview
+![Layout](layout/layout.png)
